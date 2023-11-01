@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+
+                <table class="table table-striped">
+
+                    <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Action</td>
+                    </tr>
+                    <tr>
+
+                        {%for st in students%}
+                        <tr>
+                            <td>{{st.name}}</td>
+                            <td>{{st.email}}</td>
+                            <td>{{st.phone}}</td>
+                            <td>
+                                <a href="{%url 'stud-detail' st.id%}">View</a>
+                                <a href="{%url 'stud-change' st.id%}">Edit</a>
+                                <a href="{%url 'stud-delete' st.id%}">Delete</a>
+                            </td>
+                        </tr>
+
+                        {%endfor%}
+                    </tr>
+
+
+
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</body>
+</html>
